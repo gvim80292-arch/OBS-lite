@@ -28,9 +28,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload installer
-        uses: actions/upload-artifact@v4
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: OBS-Lite-Windows
-          path: obs-lite-gh/dist/*.exe
-          retention-days: 30
+          tag_name: v1.0.${{ github.run_number }}
+          name: OBS Lite v1.0.${{ github.run_number }}
+          files: obs-lite-gh/dist/*.exe
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
