@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "OBS Lite - Streaming App",
   "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gvim80292-arch/OBS-lite.git"
+  },
   "scripts": {
     "start": "electron .",
     "build:win": "electron-builder --win"
@@ -10,6 +14,7 @@
   "build": {
     "appId": "com.obslite.app",
     "productName": "OBS Lite",
+    "publish": null,
     "directories": {
       "output": "dist",
       "buildResources": "src"
